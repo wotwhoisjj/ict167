@@ -12,19 +12,21 @@ public class Student {
     
     private String studentName;
     private long studentID;
-    
+    private char enrolmentType;
     
     // Constructors 
-    private Student(){
-        
+    public Student(){
+        this.studentName = "";
+        this.studentID = 0;
+        this.enrolmentType = 'A';
     }
     
-    private Student(String name, long ID){
+    public Student(String name, long ID){
         studentName = name;
         studentID = ID;
     }
     
-    private Student(String name){
+    public Student(String name){
         studentName = name;
     }
     
@@ -32,13 +34,23 @@ public class Student {
         studentID = ID;
     }
     
+    
     // Getters and Setters
+    
+    public char getEnrolmentType(){
+        return enrolmentType;
+    }
+    
     public long getStudentID(){
         return studentID;
     }
     
     public String getStudentName(){
         return studentName;
+    }
+    
+    public void setEnrolmentType(char newEnrolmentType){
+        enrolmentType = newEnrolmentType;
     }
     
     public void setStudentName(String newName){
@@ -56,4 +68,5 @@ public class Student {
     private boolean equals(Student otherStudent){
         return studentID == otherStudent.getStudentID();
     }
+    
 }
